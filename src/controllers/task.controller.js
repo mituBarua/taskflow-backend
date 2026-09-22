@@ -1,8 +1,7 @@
 import { TaskModel } from "../models/task.model.js";
 import { AppError } from "../utils/AppError.js";
 
-// Validate the URL ID and retrieve the task.
-// Used by get, update, and delete operations.
+
 function getExistingTask(id) {
   if (
     !/^[1-9]\d*$/.test(id) ||
@@ -55,7 +54,7 @@ export function createTask(req, res) {
 export function updateTask(req, res) {
   const existingTask = getExistingTask(req.params.id);
 
-  // Preserve existing fields when only some fields are submitted.
+
   const values = {
     ...existingTask,
     ...req.validatedBody,

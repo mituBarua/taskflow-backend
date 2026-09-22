@@ -10,7 +10,7 @@ export function validateBody(schema) {
       for (const issue of result.error.issues) {
         const field = issue.path.join(".") || "body";
 
-        // Keep the first error for each field.
+        
         if (!errors[field]) {
           errors[field] = issue.message;
         }
@@ -25,7 +25,7 @@ export function validateBody(schema) {
       );
     }
 
-    // Save validated data, including defaults and trimmed text.
+    
     req.validatedBody = result.data;
 
     next();

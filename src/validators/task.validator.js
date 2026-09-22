@@ -28,7 +28,7 @@ const taskFields = {
 };
 
 // Creating a task requires a title.
-// Other fields receive defaults if omitted.
+
 export const createTaskSchema = z
   .object({
     ...taskFields,
@@ -40,7 +40,7 @@ export const createTaskSchema = z
   .strict();
 
 // Updating a task allows individual fields to change.
-// However, an empty update is rejected.
+
 export const updateTaskSchema = z
   .object(taskFields)
   .partial()

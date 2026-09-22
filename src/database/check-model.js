@@ -65,7 +65,7 @@ try {
 
   console.log("PASS: Delete task");
 } finally {
-  // Leave the database as it was before these checks.
+  
   db.exec("ROLLBACK");
   db.close();
 }

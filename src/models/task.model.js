@@ -37,7 +37,7 @@ function create({
 }
 
 // Update an existing task and return the updated record.
-// The controller will supply all four fields.
+
 function update(id, { title, description, priority, status }) {
   const result = db
     .prepare(`
