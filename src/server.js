@@ -9,11 +9,13 @@ import {
 // Ensure the table exists before accepting requests.
 migrateDatabase();
 
-const server = app.listen(env.port, () => {
-  console.log(
-    `API running at http://localhost:${env.port}`
-  );
-});
+const server = app.listen(
+  env.port,
+  "0.0.0.0",
+  () => {
+    console.log(`Server running on port ${env.port}`);
+  }
+);
 
 // Stop accepting requests, then close the database.
 function shutdown() {
